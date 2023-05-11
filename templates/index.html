@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fernet Encryption/Decryption</title>
+    <link rel="stylesheet" href="../static/styles.css">
+  </head>
+  <body>
+    <h1>Fernet Encryption/Decryption</h1>
+    <form action="{{ url_for('encrypt') }}" method="post">
+      <label for="key">Key:</label>
+      <input type="text" id="key" name="key"><br><br>
+      <label for="message">Message:</label>
+      <input type="text" id="message" name="message"><br><br>
+      <button type="submit">Encrypt</button>
+    </form>
+    <form action="{{ url_for('decrypt') }}" method="post">
+      <label for="key">Key:</label>
+      <input type="text" id="key" name="key"><br><br>
+      <label for="token">Token:</label>
+      <input type="text" id="token" name="token"><br><br>
+      <button type="submit">Decrypt</button>
+    </form>
+    <form action="{{ url_for('generated')}}" method="post">
+      <button type="submit">Generate Key</button>
+    </form>
+  </body>
+</html>
